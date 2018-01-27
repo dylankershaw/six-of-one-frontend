@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-const App = () => {
-  return <div>APP</div>;
-};
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = { mode: "read" };
+  }
+
+  render() {
+    return <div>APP</div>;
+  }
+}
 
 export default App;

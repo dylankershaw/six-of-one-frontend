@@ -16,9 +16,11 @@ ShallowWrapper {
     "instance": null,
     "key": undefined,
     "nodeType": "host",
-    "props": Object {},
+    "props": Object {
+      "children": "APP",
+    },
     "ref": null,
-    "rendered": null,
+    "rendered": "APP",
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -26,9 +28,11 @@ ShallowWrapper {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
-      "props": Object {},
+      "props": Object {
+        "children": "APP",
+      },
       "ref": null,
-      "rendered": null,
+      "rendered": "APP",
       "type": "div",
     },
   ],

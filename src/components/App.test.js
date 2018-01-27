@@ -9,4 +9,8 @@ describe("App", () => {
   it("renders correctly", () => {
     expect(app).toMatchSnapshot();
   });
+
+  it("initializes the `state` in read mode", () => {
+    expect(app.state().mode).toEqual("read");
+  });
 });
