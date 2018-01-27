@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import Navbar from "./Navbar";
+import logo from "../assets/logo_and_hamburger.svg";
 
 class App extends Component {
   constructor() {
@@ -12,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <img alt="six of one logo" src={logo} />
       </div>
     );
   }
