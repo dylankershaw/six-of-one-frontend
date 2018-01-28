@@ -1,3 +1,18 @@
+.title,
+.callout,
+.author {
+  font-family: Copernicus;
+}
+
+.body {
+  font-family: palatino;
+}
+
+.location,
+.description {
+  font-family: futura;
+}
+
 .logo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
