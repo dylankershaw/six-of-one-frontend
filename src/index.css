@@ -1,8 +1,13 @@
-#logo {
+.logo {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
 
-#cover-photo {
+.cover-photo {
   width: 100%;
+}
+
+.edit-btn {
+  width: 5%;
+  background-color: yellow;
 }

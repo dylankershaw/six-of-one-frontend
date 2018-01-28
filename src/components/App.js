@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import coverPhoto from "../assets/cover_photo.jpg";
+
 import logo from "../assets/logo_and_hamburger.svg";
+import coverPhoto from "../assets/cover_photo.jpg";
+import ReadTitle from "./ReadTitle";
 
 class App extends Component {
   constructor() {
@@ -12,8 +14,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <img id="logo" alt="six of one logo" src={logo} />
-        <img id="cover-photo" alt="mountain landscape" src={coverPhoto} />
+        <img className="logo" alt="six of one logo" src={logo} />
+        <img
+          className="cover-photo"
+          alt="mountain landscape"
+          src={coverPhoto}
+        />
+        {this.state.mode === "read" ? <ReadTitle /> : null}
       </div>
     );
   }
