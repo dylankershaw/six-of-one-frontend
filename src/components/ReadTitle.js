@@ -10,13 +10,6 @@ class ReadTitle extends Component {
     this.state = { title: "" };
   }
 
-  // fetches title from API and sets it to state
-  getTitle = slug => {
-    fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
-      resp.json().then(json => this.setState({ title: json.title }))
-    );
-  };
-
   // extracts slug from URL and passes it to getTitle()
   componentDidMount() {
     const slug = this.props.history.location.pathname.slice(7);
@@ -31,6 +24,13 @@ class ReadTitle extends Component {
       </div>
     );
   }
+
+  // fetches title from API and sets it to state
+  getTitle = slug => {
+    fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
+      resp.json().then(json => this.setState({ title: json.title }))
+    );
+  };
 }
 
 export default withRouter(ReadTitle);

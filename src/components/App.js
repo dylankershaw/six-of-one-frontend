@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 import logo from "../assets/logo_and_hamburger.svg";
 import coverPhoto from "../assets/cover_photo.jpg";
+import Description from "./Description";
 import ReadTitle from "./ReadTitle";
+import Body from "./Body";
 
 class App extends Component {
   constructor() {
@@ -21,6 +23,8 @@ class App extends Component {
           src={coverPhoto}
         />
         {this.state.mode === "read" ? <ReadTitle /> : null}
+        <Description />
+        <Body />
       </div>
     );
   }
