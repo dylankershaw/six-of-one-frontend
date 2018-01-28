@@ -7,7 +7,14 @@ class EditTitle extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { slug: "", title: this.props.title };
+    this.state = {
+      title: this.props.title,
+      slug: ""
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ slug: this.slugify(this.state.title) });
   }
 
   render() {
@@ -58,15 +65,18 @@ class EditTitle extends Component {
 
     return fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
       resp.json().then(json => {
-        if (json) {
-          slug +=
-            "-" +
-            Math.random()
-              .toString(36)
-              .substr(2, 5);
-        }
+        if (json) slug += this.randomSlugChars();
         this.setState({ slug });
       })
+    );
+  };
+
+  randomSlugChars = () => {
+    return (
+      "-" +
+      Math.random()
+        .toString(36)
+        .substr(2, 5)
     );
   };
 
