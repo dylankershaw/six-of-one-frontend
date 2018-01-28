@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 
 import checkmark from "../assets/checkmark.svg";
 import x from "../assets/x.svg";
@@ -14,7 +15,9 @@ class EditTitle extends Component {
   }
 
   componentDidMount() {
-    this.setState({ slug: this.slugify(this.state.title) });
+    this.setState({
+      slug: this.slugify(this.state.title) + this.randomChars()
+    });
   }
 
   render() {
@@ -33,9 +36,7 @@ class EditTitle extends Component {
             className={
               this.state.title ? "confirm-btn-active" : "confirm-btn-inactive"
             }
-            onClick={() => {
-              if (this.state.title) this.props.changeMode("read");
-            }}
+            onClick={this.handleConfirm}
           >
             <img alt="confirm button" src={checkmark} />
           </button>
@@ -55,23 +56,48 @@ class EditTitle extends Component {
     );
   }
 
+  handleConfirm = () => {
+    if (this.state.title) {
+      this.createTitle();
+      this.props.history.push("/posts/" + this.state.slug);
+      this.props.changeTitle(this.state.title);
+      this.props.changeMode("read");
+    }
+  };
+
+  createTitle = () => {
+    fetch("http://localhost:3000/api/v1/posts/", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: this.state.title,
+        slug: this.state.slug
+      })
+    });
+  };
+
   handleChange = ev => {
     this.setSlug(ev.target.value);
     this.setState({ title: ev.target.value });
   };
 
   setSlug = title => {
+    if (!title) return this.setState({ slug: "" });
+
     let slug = this.slugify(title);
 
     return fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
       resp.json().then(json => {
-        if (json) slug += this.randomSlugChars();
+        if (json) slug += this.randomChars();
         this.setState({ slug });
       })
     );
   };
 
-  randomSlugChars = () => {
+  randomChars = () => {
     return (
       "-" +
       Math.random()
@@ -91,4 +117,4 @@ class EditTitle extends Component {
   };
 }
 
-export default EditTitle;
+export default withRouter(EditTitle);

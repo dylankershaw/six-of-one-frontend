@@ -15,10 +15,10 @@ class App extends Component {
     this.state = { mode: "read", title: "" };
   }
 
-  // extracts slug from URL and passes it to getTitle()
+  // extracts slug from URL and passes it to setTitle()
   componentDidMount() {
     const slug = this.props.history.location.pathname.slice(7);
-    this.getTitle(slug);
+    this.setTitle(slug);
   }
 
   render() {
@@ -33,7 +33,11 @@ class App extends Component {
         {this.state.mode === "read" ? (
           <ReadTitle title={this.state.title} changeMode={this.changeMode} />
         ) : (
-          <EditTitle title={this.state.title} changeMode={this.changeMode} />
+          <EditTitle
+            title={this.state.title}
+            changeMode={this.changeMode}
+            changeTitle={this.changeTitle}
+          />
         )}
         <Description />
         <Body />
@@ -41,14 +45,19 @@ class App extends Component {
     );
   }
 
+  //// REFACTOR THESE TWO INTO ONE ////
   changeMode = mode => {
     this.setState({ mode });
   };
 
+  changeTitle = title => {
+    this.setState({ title });
+  };
+
   // fetches title from API and sets it to state
-  getTitle = slug => {
+  setTitle = slug => {
     fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
-      resp.json().then(json => this.setState({ title: json.title }))
+      resp.json().then(json => this.changeTitle(json.title))
     );
   };
 }
