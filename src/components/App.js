@@ -1,3 +1,4 @@
+import { withRouter } from "react-router";
 import React, { Component } from "react";
 
 import logo from "../assets/logo_and_hamburger.svg";
@@ -11,7 +12,13 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = { mode: "read" };
+    this.state = { mode: "read", title: "" };
+  }
+
+  // extracts slug from URL and passes it to getTitle()
+  componentDidMount() {
+    const slug = this.props.history.location.pathname.slice(7);
+    this.getTitle(slug);
   }
 
   render() {
@@ -24,9 +31,9 @@ class App extends Component {
           src={coverPhoto}
         />
         {this.state.mode === "read" ? (
-          <ReadTitle changeMode={this.changeMode} />
+          <ReadTitle title={this.state.title} changeMode={this.changeMode} />
         ) : (
-          <EditTitle changeMode={this.changeMode} />
+          <EditTitle title={this.state.title} changeMode={this.changeMode} />
         )}
         <Description />
         <Body />
@@ -37,6 +44,13 @@ class App extends Component {
   changeMode = mode => {
     this.setState({ mode });
   };
+
+  // fetches title from API and sets it to state
+  getTitle = slug => {
+    fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
+      resp.json().then(json => this.setState({ title: json.title }))
+    );
+  };
 }
 
-export default App;
+export default withRouter(App);
