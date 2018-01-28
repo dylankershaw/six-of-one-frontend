@@ -7,8 +7,23 @@
   width: 100%;
 }
 
-.edit-btn {
-  background-color: yellow;
+button {
   border: none;
   width: 5%;
+}
+
+.edit-btn {
+  background-color: yellow;
+}
+
+.cancel-btn {
+  background-color: red;
+}
+
+.confirm-btn-active {
+  background-color: green;
+}
+
+.confirm-btn-inactive {
+  background-color: gray;
 }

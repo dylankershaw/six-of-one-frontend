@@ -7,7 +7,7 @@ import "./index.css";
 
 render(
   <BrowserRouter>
-    <Route path="/posts/:slug" component={App} />
+    <Route exact path="/posts/:slug" component={App} />
   </BrowserRouter>,
   document.getElementById("root")
 );

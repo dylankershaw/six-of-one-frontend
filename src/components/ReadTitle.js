@@ -21,12 +21,11 @@ class ReadTitle extends Component {
       <div>
         <button
           className="edit-btn"
-          alt="edit button"
           onClick={() => {
             this.props.changeMode("edit");
           }}
         >
-          <img src={pencil} />
+          <img alt="edit button" src={pencil} />
         </button>
         <h1 className="title">{this.state.title}</h1>
       </div>

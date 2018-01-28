@@ -16,6 +16,7 @@ describe("App", () => {
     expect(app.state().mode).toEqual("read");
   });
 
+  //// MAKE THESE UNIT TESTS
   // describe("clicking the edit button", () => {
   //   const wrapper = mount(
   //     <MemoryRouter initialEntries={["/posts/knowledge-is-power"]}>

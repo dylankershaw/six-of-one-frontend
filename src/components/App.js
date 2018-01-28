@@ -4,6 +4,7 @@ import logo from "../assets/logo_and_hamburger.svg";
 import coverPhoto from "../assets/cover_photo.jpg";
 import Description from "./Description";
 import ReadTitle from "./ReadTitle";
+import EditTitle from "./EditTitle";
 import Body from "./Body";
 
 class App extends Component {
@@ -24,7 +25,9 @@ class App extends Component {
         />
         {this.state.mode === "read" ? (
           <ReadTitle changeMode={this.changeMode} />
-        ) : null}
+        ) : (
+          <EditTitle changeMode={this.changeMode} />
+        )}
         <Description />
         <Body />
       </div>
