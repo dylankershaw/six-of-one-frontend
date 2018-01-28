@@ -23,13 +23,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <img className="logo" alt="six of one logo" src={logo} />
-        <img
-          className="cover-photo"
-          alt="mountain landscape"
-          src={coverPhoto}
-        />
+        <img className="cover" alt="mountain landscape" src={coverPhoto} />
         {this.state.mode === "read" ? (
           <ReadTitle title={this.state.title} changeMode={this.changeMode} />
         ) : (
@@ -45,7 +41,6 @@ class App extends Component {
     );
   }
 
-  //// REFACTOR THESE TWO INTO ONE ////
   changeMode = mode => {
     this.setState({ mode });
   };
@@ -54,7 +49,7 @@ class App extends Component {
     this.setState({ title });
   };
 
-  // fetches title from API and sets it to state
+  // fetches title from API and updates state
   setTitle = slug => {
     fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
       resp.json().then(json => this.changeTitle(json.title))

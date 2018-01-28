@@ -2,7 +2,7 @@ import React from "react";
 
 const Body = () => {
   return (
-    <div>
+    <div className="body">
       NEW YORK, NY. Nunc eu ullamcorper orci. Quisque eget odio ac lectus
       vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum.
       Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet
