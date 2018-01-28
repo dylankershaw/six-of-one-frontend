@@ -23,7 +23,7 @@ class EditTitle extends Component {
           title={this.state.title}
         />
         <input
-          className="title"
+          className="title edit-title"
           value={this.state.title}
           onChange={this.handleChange}
         />

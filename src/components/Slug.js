@@ -13,9 +13,11 @@ class Slug extends Component {
 
   render() {
     return (
-      <div>
-        Slug:
-        {this.props.slug ? this.props.slug : "please enter a post title"}
+      <div className="slug">
+        <span className="slug-colon">slug: </span>
+        <span className="slug-text">
+          {this.props.slug ? this.props.slug : "please enter a post title"}
+        </span>
       </div>
     );
   }

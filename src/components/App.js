@@ -23,20 +23,42 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <img className="logo" alt="six of one logo" src={logo} />
-        <img className="cover" alt="mountain landscape" src={coverPhoto} />
-        {this.state.mode === "read" ? (
-          <ReadTitle title={this.state.title} changeMode={this.changeMode} />
-        ) : (
-          <EditTitle
-            title={this.state.title}
-            changeMode={this.changeMode}
-            changeTitle={this.changeTitle}
-          />
-        )}
-        <Description />
-        <Body />
+      <div>
+        <div className="row navbar">
+          <div className="col-6" />
+          <img className="logo col-2" alt="logo" src={logo} />
+        </div>
+        <div className="row">
+          <img className="cover col-8" alt="background" src={coverPhoto} />
+        </div>
+        <div className="row">
+          <div className="col-1" />
+          <div className="col-5">
+            {this.state.mode === "read" ? (
+              <ReadTitle
+                title={this.state.title}
+                changeMode={this.changeMode}
+              />
+            ) : (
+              <EditTitle
+                title={this.state.title}
+                changeMode={this.changeMode}
+                changeTitle={this.changeTitle}
+              />
+            )}
+          </div>
+          <div className="col-2" />
+        </div>
+        <div className="row content">
+          <div className="col-1" />
+          <div className="col-2">
+            <Description />
+          </div>
+          <div className="col-4">
+            <Body />
+          </div>
+          <div className="col-1" />
+        </div>
       </div>
     );
   }

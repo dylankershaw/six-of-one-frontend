@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import App from "./components/App";
-import "./copernicus_webfont/font.css";
+import "./assets/copernicus_webfont/font.css";
 import "./index.css";
 
 render(

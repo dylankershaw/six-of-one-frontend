@@ -14,7 +14,9 @@ class ReadTitle extends Component {
         >
           <img alt="edit button" src={pencil} />
         </button>
-        <h1 className="title">{this.props.title}</h1>
+        <div className="read-title-bg">
+          <h1 className="title read-title">{this.props.title}</h1>
+        </div>
       </div>
     );
   }

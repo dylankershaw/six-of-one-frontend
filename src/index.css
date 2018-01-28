@@ -1,15 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+.col-1 {
+  width: 12.5%;
+}
+.col-2 {
+  width: 25%;
+}
+.col-3 {
+  width: 37.5%;
+}
+.col-4 {
+  width: 50%;
+}
+.col-5 {
+  width: 62.5%;
+}
+.col-6 {
+  width: 75%;
+}
+.col-7 {
+  width: 87.5%;
+}
+.col-8 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+  padding-top: 1px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.navbar {
+  position: relative;
+  top: 2em;
+  right: 4em;
+  z-index: 1;
+}
+
 .title,
 .callout,
 .author {
   font-family: Copernicus;
 }
 
+.read-title-bg {
+  position: relative;
+  bottom: 9em;
+  height: 10em;
+  background-color: white;
+}
+
+.read-title {
+  font-size: 3em;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url("./assets/cover_photo.jpg");
+  background-position-y: 100%;
+}
+
+.edit-title {
+  position: relative;
+  bottom: 5em;
+  background-color: white;
+  font-size: 2em;
+  width: 100%;
+  height: 3em;
+}
+
 .body {
   font-family: palatino;
+  line-height: 1.4em;
 }
 
 .location,
-.description {
+.description,
+.slug {
   font-family: futura;
 }
 
@@ -20,25 +94,88 @@
 
 .cover {
   width: 100%;
+  position: relative;
+  bottom: 2em;
 }
 
 button {
   border: none;
-  width: 5%;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  z-index: 1;
+  color: transparent;
 }
 
 .edit-btn {
   background-color: yellow;
+  position: relative;
+  bottom: 10em;
+  right: 3em;
 }
 
 .cancel-btn {
-  background-color: red;
+  background-color: lightcoral;
+  position: relative;
+  bottom: 17.5em;
+  right: 3em;
 }
 
 .confirm-btn-active {
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .confirm-btn-inactive {
   background-color: gray;
+}
+
+.confirm-btn-active,
+.confirm-btn-inactive {
+  position: relative;
+  bottom: 14.5em;
+  right: 6em;
+}
+
+.slug {
+  position: relative;
+  bottom: 9.5em;
+}
+
+.slug-colon {
+  color: darkgrey;
+}
+
+.slug-text {
+  color: grey;
+}
+
+.content {
+  position: relative;
+  bottom: 8em;
+}
+
+.location {
+  color: grey;
+  font-size: x-small;
+  margin-right: 1em;
+}
+
+.callout {
+  position: relative;
+  right: 2em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  color: #8998a5;
+  font-size: x-large;
+  line-height: 1.4em;
+}
+
+.description {
+  font-size: small;
+  color: grey;
+}
+
+.author {
+  font-size: medium;
+  color: #714e35;
 }
