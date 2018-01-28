@@ -28,7 +28,9 @@ ShallowWrapper {
           className="cover-photo"
           src="cover_photo.jpg"
 />,
-        <withRouter(ReadTitle) />,
+        <withRouter(ReadTitle)
+          changeMode={[Function]}
+/>,
         <Description />,
         <Body />,
       ],
@@ -65,7 +67,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "changeMode": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -108,7 +112,9 @@ ShallowWrapper {
             className="cover-photo"
             src="cover_photo.jpg"
 />,
-          <withRouter(ReadTitle) />,
+          <withRouter(ReadTitle)
+            changeMode={[Function]}
+/>,
           <Description />,
           <Body />,
         ],
@@ -145,7 +151,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "changeMode": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

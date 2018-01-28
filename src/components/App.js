@@ -22,12 +22,18 @@ class App extends Component {
           alt="mountain landscape"
           src={coverPhoto}
         />
-        {this.state.mode === "read" ? <ReadTitle /> : null}
+        {this.state.mode === "read" ? (
+          <ReadTitle changeMode={this.changeMode} />
+        ) : null}
         <Description />
         <Body />
       </div>
     );
   }
+
+  changeMode = mode => {
+    this.setState({ mode });
+  };
 }
 
 export default App;

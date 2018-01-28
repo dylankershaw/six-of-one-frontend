@@ -8,6 +8,7 @@
 }
 
 .edit-btn {
-  width: 5%;
   background-color: yellow;
+  border: none;
+  width: 5%;
 }
