@@ -25,7 +25,7 @@ To access the API directly, navigate to the following endpoint: https://six-of-o
 <br /> *in back-end directory:* `bundle install`
 
 3. Create, migrate, and seed database (if running API locally).
-<br /> If you'd prefer to run the API locally, be sure to Find & Replace all references to the surge.sh API with the path of your local API within the front-end app. (i.e. replace `six-of-one-api.herokuapp.com/` with `http://localhost:3000/`.
+<br /> If you'd prefer to run the API locally, be sure to Find & Replace all references to the surge.sh API with the path of your local API within the front-end app. (i.e. replace `six-of-one-api.herokuapp.com/` with `localhost:3000/`.
     * Since the database is PostgreSQL, be sure to run [Postgres](https://www.postgresql.org/) first.
     * *in back-end directory:*
       * `rake db:create`
