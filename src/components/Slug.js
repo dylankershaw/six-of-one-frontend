@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 class Slug extends Component {
-  // immediately adds random characters to end of slug
+  // sets slug on mount
   componentDidMount() {
-    this.props.changeSlug(this.slugify(this.props.title) + this.randomChars());
+    this.props.changeSlug(this.slugify(this.props.title));
   }
 
   // makes and changes slug when title changes

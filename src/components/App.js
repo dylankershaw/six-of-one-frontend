@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="gutters">
         <div className="row navbar">
           <div className="col-6" />
           <img className="logo col-2" alt="logo" src={logo} />

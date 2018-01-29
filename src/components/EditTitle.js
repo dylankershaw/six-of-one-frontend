@@ -54,15 +54,17 @@ class EditTitle extends Component {
   };
 
   createPost = () => {
-    fetch("http://localhost:3000/api/v1/posts/", {
-      method: "POST",
+    const oldSlug = this.props.history.location.pathname.slice(7);
+
+    fetch("http://localhost:3000/api/v1/posts/" + oldSlug, {
+      method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
         title: this.state.title,
-        slug: this.state.slug
+        newSlug: this.state.slug
       })
     });
   };

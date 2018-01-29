@@ -27,6 +27,11 @@
   width: 100%;
 }
 
+.gutters {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
 [class*="col-"] {
   float: left;
   padding-top: 1px;
@@ -93,8 +98,9 @@
 }
 
 .cover {
-  width: 100%;
   position: relative;
+  right: 5%;
+  width: 110%;
   bottom: 2em;
 }
 
