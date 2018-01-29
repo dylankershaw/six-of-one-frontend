@@ -46,14 +46,14 @@ class EditTitle extends Component {
 
   handleConfirm = () => {
     if (this.state.title) {
-      this.createPost();
+      this.renamePost();
       this.props.history.push("/posts/" + this.state.slug);
       this.props.changeTitle(this.state.title);
       this.props.changeMode("read");
     }
   };
 
-  createPost = () => {
+  renamePost = () => {
     const oldSlug = this.props.history.location.pathname.slice(7);
 
     fetch("http://localhost:3000/api/v1/posts/" + oldSlug, {

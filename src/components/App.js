@@ -34,6 +34,7 @@ class App extends Component {
         <div className="row">
           <div className="col-1" />
           <div className="col-5">
+            {/* renders ReadTitle or EditTitle depending on current mode */}
             {this.state.mode === "read" ? (
               <ReadTitle
                 title={this.state.title}
@@ -71,7 +72,7 @@ class App extends Component {
     this.setState({ title });
   };
 
-  // fetches title from API and updates state
+  // fetches title from API and puts it in state
   setTitle = slug => {
     fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
       resp.json().then(json => this.changeTitle(json.title))
