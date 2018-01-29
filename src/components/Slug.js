@@ -28,7 +28,9 @@ class Slug extends Component {
 
     let slug = this.slugify(title);
 
-    return fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
+    return fetch(
+      "http://six-of-one-api.herokuapp.com/api/v1/posts/" + slug
+    ).then(resp =>
       resp.json().then(json => {
         if (json) slug += this.randomChars();
         this.props.changeSlug(slug);

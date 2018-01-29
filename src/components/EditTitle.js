@@ -56,7 +56,7 @@ class EditTitle extends Component {
   renamePost = () => {
     const oldSlug = this.props.history.location.pathname.slice(7);
 
-    fetch("http://localhost:3000/api/v1/posts/" + oldSlug, {
+    fetch("http://six-of-one-api.herokuapp.com/api/v1/posts/" + oldSlug, {
       method: "PUT",
       headers: {
         Accept: "application/json",

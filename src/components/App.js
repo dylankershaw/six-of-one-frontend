@@ -74,8 +74,8 @@ class App extends Component {
 
   // fetches title from API and puts it in state
   setTitle = slug => {
-    fetch("http://localhost:3000/api/v1/posts/" + slug).then(resp =>
-      resp.json().then(json => this.changeTitle(json.title))
+    fetch("http://six-of-one-api.herokuapp.com/api/v1/posts/" + slug).then(
+      resp => resp.json().then(json => this.changeTitle(json.title))
     );
   };
 }
