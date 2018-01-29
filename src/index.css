@@ -30,6 +30,8 @@
 .gutters {
   padding-left: 70px;
   padding-right: 70px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 [class*="col-"] {
