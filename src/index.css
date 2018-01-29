@@ -46,7 +46,6 @@
 .navbar {
   position: relative;
   top: 2em;
-  right: 4em;
   z-index: 1;
 }
 
@@ -99,8 +98,8 @@
 
 .cover {
   position: relative;
-  right: 5%;
-  width: 110%;
+  right: 10%;
+  width: 120%;
   bottom: 2em;
 }
 
@@ -110,7 +109,6 @@ button {
   height: 3em;
   cursor: pointer;
   z-index: 1;
-  color: transparent;
 }
 
 .edit-btn {
