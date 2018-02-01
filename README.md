@@ -5,7 +5,7 @@ The fastest and easiest way to view this app is by navigating to the deployed ve
 
 *NOTE: Since the API is hosted on Heroku, its dyno may be asleep if not accessed for over an hour. If you experience this, it should speed up after the initial request.*
 
-  * http://six-of-one.surge.sh/posts/knowledge-is-power/
+  * http://six-of-one.surge.sh/posts/are-we-out-of-the-woods-yet/
   * http://six-of-one.surge.sh/posts/i-dwell-in-possibility/
   * http://six-of-one.surge.sh/posts/we-dont-get-offered-crises-they-arrive/
   * http://six-of-one.surge.sh/posts/i-have-seen-the-future-and-it-doesnt-work/
